@@ -1,0 +1,21 @@
+建表：
+create table manager(
+    id int primary key,
+    name varchar(20) not null,
+    pwd char(20) not null
+);
+
+create table department(
+    id int primary key,
+    name varchar(20) not null
+);
+
+create table employee(
+    id int primary key,
+    age int,
+    name varchar(20) not null,
+    sex int default -1,
+    dept_id not null,
+    foreign key(dept_id) references department(id)
+);
+
